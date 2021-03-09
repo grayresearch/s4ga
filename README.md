@@ -4,11 +4,11 @@ targeting ~0.1mm2 of the 130nm Skywater ASIC PDK,
 using the efabless Caravel harness and the
 Zero-to-ASIC multiproject framework.
 
-It configurably implements an FPGA with x inputs, y outputs, and n k-LUTs,
-for a total of w=n+x global nets. The first y of the global nets are
-the outputs. The FPGA is organized as n/m LUT-clusters of m k-LUTs. For each
-LUT, 0<=g<=k of its inputs may specify global nets, while k-g of its
-inputs must be local nets from the m k-LUTs of its cluster.
+It configurably implements an FPGA with x inputs, y outputs, and n
+k-LUTs, for a total of w=n+x global nets. The first y global nets are
+the outputs. The FPGA is organized as n/m LUT-clusters of m k-LUTs. For
+each LUT, 0<=g<=k of its inputs may specify global nets, while k-g of
+its inputs must be local nets from the m k-LUTs of its cluster.
 
 Within a LUT-cluster, LUTs are evaluated one after another, serially.
 Therefore it takes m clock cycles to evaluate all the LUTs once, a "full
@@ -127,8 +127,8 @@ Example:
 If the last or second last net index is all 1's it designates a special
 input net, depending upon LUT input position:
 
-* k-1.=1: special: constant "1";
-* k-2. =q: special: q, the preceding half-LUT output;
+* k-1: =1: cial: constant "1";
+* k-2: =q: the preceding half-LUT output;
 
 ## IOs
 
@@ -171,7 +171,8 @@ Idea: reduce area of each LUT input result forwarding mux input by
 replacing lg(w)-bit comparison against variable lilut_1 with comparison
 with constant ~0.
 
-Idea: add an output bit mask per cluster 
+Idea: add an output bit mask per cluster and only shift those outputs
+into the global nets.
 
 TODO: write up alternative where cluster config memory has
 
