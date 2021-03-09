@@ -141,6 +141,8 @@ or from input pads.
 
 ## Implementation in Skywater 130nm and efabless Caravel harness, for the Zero-to-ASIC class shared multi-project wafer
 
+![Block diagram](doc/s4ga-sky130.png)
+
 ### LUT Configuration Memory
 
 The LUT configuration memory uses the vast majority of the area of the FPGA.
