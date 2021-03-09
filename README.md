@@ -10,6 +10,8 @@ the outputs. The FPGA is organized as n/m LUT-clusters of m k-LUTs. For
 each LUT, 0<=g<=k of its inputs may specify global nets, while k-g of
 its inputs must be local nets from the m k-LUTs of its cluster.
 
+![Block diagram](doc/saga_n40m8k4g2.jpg)
+
 Within a LUT-cluster, LUTs are evaluated one after another, serially.
 Therefore it takes m clock cycles to evaluate all the LUTs once, a "full
 cycle". Technology mapping is sensitive to order of LUT evalation within
