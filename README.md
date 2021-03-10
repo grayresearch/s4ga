@@ -198,7 +198,7 @@ a code to RLE that. For example:
 * 2'd1: 4x LUT(,,,+1)
 * 2'd2: 4x LUT(,,+1,+1))
 
-This requires either 4b wide LUTs and input buses or 4 cycles of existing
-1b wide LUTs. For the latter the cluster's LUT shift register storage
-bits would have to be (significantly larger area) clock enabled D-FFs
-which could counterintuitively reduce the LUT capacity of the FPGA.
+This requires either variously 1b/4b wide LUTs and input buses or 4 cycles
+of existing 1b wide LUTs. For the latter the cluster's LUT shift register
+storage bits would have to be (significantly larger area) clock enabled
+D-FFs which could counterintuitively reduce the LUT capacity of the FPGA.
