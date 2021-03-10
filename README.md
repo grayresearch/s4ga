@@ -1,5 +1,5 @@
 # S4GA
-Copyright (C) 2021, Gray Research LLC  
+Copyright (C) 2021, Gray Research LLC.
 Licensed under the Apache License, Version 2.0
 
 S4GA is a small simple slow serial FPGA core,
