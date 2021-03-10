@@ -183,7 +183,10 @@ with constant ~0.
 Idea: add an output bit mask per cluster and only shift those outputs
 into the global nets.
 
-Idea: alternative cluster config memory with
+Idea: as globals are fetched during serial LUT evaluation,
+cache them in a shift register, accessible as more "local nets",
+so that if some globals are reused they can be re-referenced
+as local nets.
 
 1. stream of truth tables
 2. stream of global net indices referenced by any LUT in this cluster;
@@ -200,6 +203,6 @@ a code to RLE that. For example:
 * 2'd2: 4x LUT(,,+1,+1))
 
 This requires either 4b wide LUTs and input buses or 4 cycles of existing
-1b wide LUTs. For the latter the LUT shift register storage bits would have to be
-(significantly larger area) clock enabled D-FFs which could counterintuitively
-reduce the LUT capacity of the FPGA.
+1b wide LUTs. For the latter the cluster's LUT shift register storage
+bits would have to be (significantly larger area) clock enabled D-FFs
+which could counterintuitively reduce the LUT capacity of the FPGA.
