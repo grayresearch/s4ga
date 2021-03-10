@@ -198,3 +198,8 @@ a code to RLE that. For example:
 * 2'd0: 1x LUT(,,,,)
 * 2'd1: 4x LUT(,,,+1)
 * 2'd2: 4x LUT(,,+1,+1))
+
+This requires either 4b wide LUTs and input buses or 4 cycles of existing
+1b wide LUTs. For the latter the LUT shift registers would have to be
+clocked enabled D-FFs which would significant increase the area they
+consume and therefore reduce the capacity of the FPGA.
