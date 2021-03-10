@@ -188,10 +188,6 @@ cache them in a shift register, accessible as more "local nets",
 so that if some globals are reused they can be re-referenced
 as local nets.
 
-1. stream of truth tables
-2. stream of global net indices referenced by any LUT in this cluster;
-3. stream of each LUTs' k net indices incl. local or global nets)
-
 Idea: reviewing the two adder examples above, we see each adder LUT TTs
 are redundant from LUT to LUT and there is a constant stride of two of
 the LUT inputs (,,+1,+1). It may be possible to to prefix the LUT with
