@@ -174,7 +174,7 @@ burning power. To mitigate this somewhat, and to be a good neighbor on
 a multiproject Caravel project, on reset or project-deactivate the LUT
 configs shift regs are loaded with all 0s.
 
-## Ideas and TODOs
+## Ideas
 
 Idea: reduce area of each LUT input result forwarding mux input by
 replacing lg(w)-bit comparison against variable lilut_1 with comparison
