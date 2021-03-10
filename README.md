@@ -1,4 +1,7 @@
 # S4GA
+Copyright (C) 2021, Gray Research LLC  
+Licensed under the Apache License, Version 2.0
+
 S4GA is a small simple slow serial FPGA core,
 targeting ~0.1mm2 of the 130nm Skywater ASIC PDK,
 using the efabless Caravel harness and the
@@ -34,7 +37,7 @@ be used as an input of the next LUT evaluation in that cluster.
 	; i:   LUT{lut4}(in3,in2,in1,in0)
 	; i,q: LUT{lut3,lut3}(=1,in2,in1,in0)
 
-When k>=4 this enables relatively fast and efficient ripple-carry adders:
+When k>=4 this enables relatively efficient ripple-carry adders:
 
 	; Example 1:
 	; n=8 x=8 y=8 m=8 k=4 g=1
