@@ -55,7 +55,6 @@ When k>=4 this enables relatively efficient ripple-carry adders:
 	----
 	8b adder, 8 minor cycles = 1 full cycle
 
-
 	; Example 2:
 	; n=8 x=15 y=8 m=8 k=4 g=2
 	; sel = 8
@@ -108,7 +107,7 @@ LUT has four global inputs (i.e. LUT outputs from other clusters), form:
 
 A k-LUT is represented by a 2<sup>k</sup> truth table and a vector of k input nets
 (net indices). A global net index designates the output of any LUT,
-or any input, lg(w=n+x) bits. A local net index designates the output
+or any input, and is lg(w=n+x) bits. A local net index designates the output
 of a LUT in the cluster and is lg(m) bits.
 Example:
 
@@ -142,9 +141,12 @@ written by Wishbone initiator, or from external MPRJ IO input pads.
 An MMIO mask register TBD selects which input bit(s) come from Wishbone
 or from input pads.
 
-## Implementation in Skywater 130nm and efabless Caravel harness, for the Zero-to-ASIC class shared multi-project wafer
+## Implementation in Skywater 130nm PDK
 
-![Block diagram](doc/s4ga-sky130.png)
+This design, an assignment in Matthew Venn's Zero-to-ASIC class, targets a
+300x300um extent of the user-project area of the efabless Caravel harness.
+
+![S4GA implementation in Skywater 130nm PDK](doc/s4ga-sky130.png)
 
 ### LUT Configuration Memory
 
