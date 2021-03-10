@@ -183,16 +183,16 @@ with constant ~0.
 Idea: add an output bit mask per cluster and only shift those outputs
 into the global nets.
 
-TODO: write up alternative where cluster config memory has
+Idea: alternative cluster config memory with
 
 1. stream of truth tables
 2. stream of global net indices referenced by any LUT in this cluster;
 3. stream of each LUTs' k net indices incl. local or global nets)
 
-(Unimplemented idea: reviewing the two adder examples above, we see each
-adder LUT TTs are redundant from LUT to LUT and there is a constant
-stride of two of the LUT inputs (,,+1,+1). It may be possible to to
-prefix the LUT with a code to RLE that. For example:
+Idea: reviewing the two adder examples above, we see each adder LUT TTs
+are redundant from LUT to LUT and there is a constant stride of two of
+the LUT inputs (,,+1,+1). It may be possible to to prefix the LUT with
+a code to RLE that. For example:
 
 * prefix: meaning
 * 2'd0: 1x LUT(,,,,)
