@@ -1,6 +1,6 @@
 # S4GA
 Copyright (C) 2021, Gray Research LLC.
-Licensed under the Apache License, Version 2.0
+Licensed under the Apache License, Version 2.0.
 
 S4GA is a small simple slow serial FPGA core,
 targeting ~0.1mm2 of the 130nm Skywater ASIC PDK,
