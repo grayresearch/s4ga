@@ -134,12 +134,48 @@ input net, depending upon LUT input position:
 * k-1: =1: cial: constant "1";
 * k-2: =q: the preceding half-LUT output;
 
-## IOs
+## Inputs and Outputs
 
-S4GA has x inputs. Inputs can come from MMIO writeable input register(s)
-written by Wishbone initiator, or from external MPRJ IO input pads.
-An MMIO mask register TBD selects which input bit(s) come from Wishbone
-or from input pads.
+A S4GA core has x inputs and y outputs. The caravel_s4ga interface is
+used to route Wishbone data or input pads (or some of both) to the inputs.
+
+Output nets may be read back over Wishbone and may drive output pads.
+
+## Caravel Interface
+
+The module caravel_s4ga implements S4GA in the context of the
+efabless Caravel harness. This includes a Wishbone slave interface
+and a logic analyzer interface.
+
+The interface to the S4GA core is memory mapped.
+
+	Addr	Name		Bits	Description
+
+	xx00	s4ga_csr			S4GA control/status (RW)
+			.reset		0		1 => fully reset S4GA (WO)
+			.cfgd		1		0 => not configured; 1 => configured
+			.step		2		0 => run; 1 => single step on WB R/W
+	
+	xx04	s4ga_config			S4GA configuration (WO)
+	xx08	s4ga_input_mask		S4GA input mask register (WO)
+	xx10	s4ga_input			S4GA input register (WO)
+	xx20	s4ga_output			S4GA output register (RO)
+
+Using the interface, the Caravel MCU can
+
+	* reset S4GA
+	* load its configuration bitstream
+	* read back its status
+	* configure its input mask
+	* reset S4GA global nets
+	* configure S4GA to be free running
+	* configure S4GA to run one full cycle 
+	* configure S4GA to run until LUT [n-1] is 1
+
+The MCU writes each 32b frame of the configuration data into S4GA.
+
+...
+
 
 ## Implementation in Skywater 130nm PDK
 
